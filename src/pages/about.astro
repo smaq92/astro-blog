@@ -1,5 +1,18 @@
 ---
+const pageTitle = "About Moi";
 
+const identity = {
+	firstName: "Sam",
+	country: "Canada",
+	occupation: "Web Developer/Designer",
+	hobbies: ["reading", "sewing", "watching tv shows"],
+}
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Bootstrap", "TailwindCSS", "Figma", "WireFraming"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
 <html lang="en">
@@ -8,7 +21,7 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
 		 <header>
@@ -21,9 +34,26 @@
         </ul>
       </nav>
     </header>
-		<h1>About Moi</h1>
-		<p>I am an aspiring web developer/designer. I do freelance work through the small start-up (CSS Creatives) I created with my friends: Sydney and Cherry.</p>
+		<h1>{pageTitle}</h1>
+		<p>Hey there! Here are a few facts about me</p>
+		<ul>
+			<li>My name is {identity.firstName}.</li>
+			<li>I live in {identity.country} and I am an aspiring {identity.occupation}.</li>
+			{identity.hobbies.length >=2 &&
+				<li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+				}
+		</ul>
+		<p>My skills are: </p>
+		<ul>
+			{skills.map((skill)=> <li>{skill}</li>)}
+		</ul>
+		<p>I do freelance work through the small start-up (CSS Creatives) I created with my friends: Sydney and Cherry.</p>
 		<p>Right now, we don't have any projects lined up yet as we're waiting for the go-signal from our first client.</p>
-		<p>My mission for this year is to hopefully get a full-time employment as a web developer/designer at a good company for financial stability. In addition, i want to build a fashion clothing website for my own shop: Alitaya</p>
+		<p>My mission for this year is to hopefully get a full-time employment as a web developer/designer at a good company for financial stability. In addition, i want to build a fashion clothing website for my own shop: Alitaya.</p>
+
+		{happy && <p>I am happy to be learning Astro</p>}
+		{finished && <p>I finished this tutorial.</p>}
+		{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+
 	</body>
 </html>
