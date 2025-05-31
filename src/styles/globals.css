@@ -1,0 +1,68 @@
+/* Reset Styles */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol{
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* Universal Styles */
+html {
+  background-color: seashell;
+  font-family: Impact, "Haettenschweiler", "Arial Narrow Bold", sans-serif;
+}
+
+body {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 80ch;
+  padding: 1rem;
+  line-height: 1.5;
+}
+
+header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+
+
+  nav {
+    width: 40%;
+
+    ul {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+    }
+  }
+}
+
+/* Utility Classes */
+
+.logo {
+  width: 200px;
+}
+
+/* Typography */
+
+h1 {
+  margin: 1rem 0;
+  color: palevioletred;
+  font-size: 2.5rem;
+}
+
+p{
+  margin: 1.5rem;
+}

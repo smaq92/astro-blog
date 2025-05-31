@@ -1,4 +1,5 @@
 ---
+import '../styles/globals.css';
 const pageTitle = "About Moi";
 
 const identity = {
@@ -13,6 +14,10 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Bootstrap", "Tai
 const happy = true;
 const finished = false;
 const goal = 3;
+
+const skillColor = "cadetblue";
+const fontWeight = "bold";
+const textCase = "upperCase";
 ---
 
 <html lang="en">
@@ -22,10 +27,23 @@ const goal = 3;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+		<style define:vars={{skillColor, fontWeight, textCase}}>
+			
+
+			.skill{
+				color: var(--skillColor);
+				font-weight: var(--fontWeight);
+				text-transform: var(--textCase);
+			}
+
+			ul{
+				list-style: none;
+			}
+		</style>
 	</head>
 	<body>
 		 <header>
-      <p>Samistro</p>
+      <p><img class="logo" src="../../public/logo.webp" alt="Samistro logo"></p>
       <nav>
         <ul>
           <li><a href="/">Home</a></li>
@@ -36,16 +54,16 @@ const goal = 3;
     </header>
 		<h1>{pageTitle}</h1>
 		<p>Hey there! Here are a few facts about me</p>
-		<ul>
+		<ol>
 			<li>My name is {identity.firstName}.</li>
 			<li>I live in {identity.country} and I am an aspiring {identity.occupation}.</li>
 			{identity.hobbies.length >=2 &&
 				<li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
 				}
-		</ul>
+		</ol>
 		<p>My skills are: </p>
 		<ul>
-			{skills.map((skill)=> <li>{skill}</li>)}
+			{skills.map((skill)=> <li class="skill">{skill}</li>)}
 		</ul>
 		<p>I do freelance work through the small start-up (CSS Creatives) I created with my friends: Sydney and Cherry.</p>
 		<p>Right now, we don't have any projects lined up yet as we're waiting for the go-signal from our first client.</p>
