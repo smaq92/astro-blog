@@ -1,15 +1,28 @@
 ---
-import '../styles/globals.css';
+import Footer from "../components/Footer.astro";
+import Hamburger from "../components/Hamburger.astro";
+import Navigation from "../components/Navigation.astro";
+import "../styles/globals.css";
 const pageTitle = "About Moi";
 
 const identity = {
-	firstName: "Sam",
-	country: "Canada",
-	occupation: "Web Developer/Designer",
-	hobbies: ["reading", "sewing", "watching tv shows"],
-}
+  firstName: "Sam",
+  country: "Canada",
+  occupation: "Web Developer/Designer",
+  hobbies: ["reading", "sewing", "watching tv shows"],
+};
 
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Bootstrap", "TailwindCSS", "Figma", "WireFraming"];
+const skills = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "React",
+  "Astro",
+  "Bootstrap",
+  "TailwindCSS",
+  "Figma",
+  "WireFraming",
+];
 
 const happy = true;
 const finished = false;
@@ -21,57 +34,79 @@ const textCase = "upperCase";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-		<style define:vars={{skillColor, fontWeight, textCase}}>
-			
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+    <style define:vars={{ skillColor, fontWeight, textCase }}>
+      .skill {
+        color: var(--skillColor);
+        font-weight: var(--fontWeight);
+        text-transform: var(--textCase);
+      }
 
-			.skill{
-				color: var(--skillColor);
-				font-weight: var(--fontWeight);
-				text-transform: var(--textCase);
-			}
-
-			ul{
-				list-style: none;
-			}
-		</style>
-	</head>
-	<body>
-		 <header>
-      <p><img class="logo" src="../../public/logo.webp" alt="Samistro logo"></p>
+      ul {
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <p><img class="logo" src="logo.webp" alt="Samistro logo" /></p>
       <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/blog">Blog</a></li>
-        </ul>
+				<Hamburger/>
+        <Navigation />
       </nav>
     </header>
-		<h1>{pageTitle}</h1>
-		<p>Hey there! Here are a few facts about me</p>
-		<ol>
-			<li>My name is {identity.firstName}.</li>
-			<li>I live in {identity.country} and I am an aspiring {identity.occupation}.</li>
-			{identity.hobbies.length >=2 &&
-				<li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
-				}
-		</ol>
-		<p>My skills are: </p>
-		<ul>
-			{skills.map((skill)=> <li class="skill">{skill}</li>)}
-		</ul>
-		<p>I do freelance work through the small start-up (CSS Creatives) I created with my friends: Sydney and Cherry.</p>
-		<p>Right now, we don't have any projects lined up yet as we're waiting for the go-signal from our first client.</p>
-		<p>My mission for this year is to hopefully get a full-time employment as a web developer/designer at a good company for financial stability. In addition, i want to build a fashion clothing website for my own shop: Alitaya.</p>
+    <h1>{pageTitle}</h1>
+    <p>Hey there! Here are a few facts about me</p>
+    <ol>
+      <li>My name is {identity.firstName}.</li>
+      <li>
+        I live in {identity.country} and I am an aspiring {identity.occupation}.
+      </li>
+      {
+        identity.hobbies.length >= 2 && (
+          <li>
+            Two of my hobbies are: {identity.hobbies[0]} and{" "}
+            {identity.hobbies[1]}
+          </li>
+        )
+      }
+    </ol>
+    <p>My skills are:</p>
+    <ul>
+      {skills.map((skill) => <li class="skill">{skill}</li>)}
+    </ul>
+    <p>
+      I do freelance work through the small start-up (CSS Creatives) I created
+      with my friends: Sydney and Cherry.
+    </p>
+    <p>
+      Right now, we don't have any projects lined up yet as we're waiting for
+      the go-signal from our first client.
+    </p>
+    <p>
+      My mission for this year is to hopefully get a full-time employment as a
+      web developer/designer at a good company for financial stability. In
+      addition, i want to build a fashion clothing website for my own shop:
+      Alitaya.
+    </p>
 
-		{happy && <p>I am happy to be learning Astro</p>}
-		{finished && <p>I finished this tutorial.</p>}
-		{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
-
-	</body>
+    {happy && <p>I am happy to be learning Astro</p>}
+    {finished && <p>I finished this tutorial.</p>}
+    {
+      goal === 3 ? (
+        <p>My goal is to finish in 3 days.</p>
+      ) : (
+        <p>My goal is not 3 days.</p>
+      )
+    }
+    <Footer />
+		 <script>
+      import "../scripts/main.js";
+    </script>
+  </body>
 </html>

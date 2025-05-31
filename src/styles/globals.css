@@ -7,7 +7,8 @@
   padding: 0;
 }
 
-ul, ol{
+ul,
+ol {
   list-style: none;
 }
 
@@ -16,11 +17,9 @@ img {
   height: auto;
 }
 
-
 /* Universal Styles */
 html {
   background-color: seashell;
-  font-family: Impact, "Haettenschweiler", "Arial Narrow Bold", sans-serif;
 }
 
 body {
@@ -31,28 +30,15 @@ body {
   line-height: 1.5;
 }
 
-header {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: center;
-
-
-  nav {
-    width: 40%;
-
-    ul {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-between;
-    }
-  }
-}
-
 /* Utility Classes */
 
 .logo {
   width: 200px;
+}
+
+.expanded {
+  display: flex;
+  flex-flow: column wrap;
 }
 
 /* Typography */
@@ -63,6 +49,81 @@ h1 {
   font-size: 2.5rem;
 }
 
-p{
+p {
   margin: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Body Styles */
+
+header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  nav {
+    justify-self: flex-end;
+
+    ul {
+      background-color: seashell;
+      display: none;
+      gap: 1.5rem;
+      padding: 0 1.5rem 0;
+      position: fixed;
+      left: 0;
+      top: 8rem;
+      width: 100%;
+      height: 100vh;
+
+      a {
+        color: yellow;
+        background-color: #302d2d;
+        display: block;
+        padding: 0.75rem 1.5rem;
+        border-radius: 1rem;
+
+        &:hover,
+        &:focus {
+          background-color: yellow;
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+.hamburger {
+  cursor: pointer;
+  width: 40px;
+}
+
+.hamburger .line {
+  display: block;
+
+  height: 5px;
+  margin-bottom: 10px;
+  background-color: black;
+}
+
+@media screen and (min-width: 636px) {
+  header nav ul {
+    position: unset;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    height: unset;
+
+    a{
+      display:inline-block;
+    }
+  }
+
+  .hamburger {
+    display: none;
+  }
 }
