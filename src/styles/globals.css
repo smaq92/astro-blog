@@ -100,14 +100,18 @@ header {
 .hamburger {
   cursor: pointer;
   width: 40px;
+  margin-right: 2.5rem;
 }
 
 .hamburger .line {
   display: block;
-
   height: 5px;
   margin-bottom: 10px;
   background-color: black;
+}
+
+.posts{
+  margin: 1.5rem auto 3rem;
 }
 
 @media screen and (min-width: 636px) {
