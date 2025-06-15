@@ -1,13 +1,14 @@
 ---
-title: 'My Third Blog Post'
+layout: ../../layouts/MarkdownPostLayout.astro
+title: 'My Fourth Blog Post'
 pubDate: 2025-05-31
 description: 'Astro and JavaScript 2'
 author: 'Sam A.'
+image:
+    url: 'https://docs.astro.build/assets/rose.webp'
+    alt: 'The Astro logo on a dark background with a pink glow.'
 tags: ["astro", "javascript", "responsive"]
 ---
-# My Fourth Blog Post
-
-Published on: 2025-05-31
 
 Responsiveness for me is the heart of Web Development. I know starting out, I didn't do mobile first coding (you should) but I'm following the tutorial so bear with me again. 
 

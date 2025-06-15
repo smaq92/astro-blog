@@ -1,15 +1,11 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: 'My Second Blog Post'
 pubDate: 2025-05-31
 description: 'Astro and JavaScript'
 author: 'Sam A.'
 tags: ["astro", "blogging", "learning in public"]
 ---
-# My Second Blog Post
-
-Published on: 2025-05-31
-
-Welcome to Samistro, my learning blog! I have delved deeper into Astro and it's getting more exciting. 
 
 I don't want to compare but this is more exciting than the other frameworks I've learned so far. Very straightforward and I'm loving this .md posts. Only thing I wonder is how to style it but that's a later me problem. 
 

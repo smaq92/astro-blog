@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: 'My First Blog Post'
 pubDate: 2025-05-31
 description: 'This is my first ever post of my new Learning blog'
@@ -8,11 +9,6 @@ image:
     alt: 'The Astro logo on a dark background with a pink glow.'
 tags: ["astro", "blogging", "learning in public"]
 ---
-# My First Blog Post
-
-Published on: 2025-05-31
-
-Welcome to Samistro, my learning blog! This is where I will post anything that I have learned under the sun of Web Development world.
 
 ## What I've accomplished
 

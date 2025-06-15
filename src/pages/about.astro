@@ -1,8 +1,5 @@
 ---
-import Footer from "../components/Footer.astro";
-import Hamburger from "../components/Hamburger.astro";
-import Navigation from "../components/Navigation.astro";
-import "../styles/globals.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "About Moi";
 
 const identity = {
@@ -33,14 +30,8 @@ const fontWeight = "bold";
 const textCase = "upperCase";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-    <style define:vars={{ skillColor, fontWeight, textCase }}>
+<BaseLayout pageTitle={pageTitle}>
+    <style is:global define:vars={{ skillColor, fontWeight, textCase }}>
       .skill {
         color: var(--skillColor);
         font-weight: var(--fontWeight);
@@ -51,16 +42,6 @@ const textCase = "upperCase";
         list-style: none;
       }
     </style>
-  </head>
-  <body>
-    <header>
-      <div><img class="logo" src="logo.webp" alt="Samistro logo"></div>
-      <nav>
-				<Hamburger/>
-        <Navigation />
-      </nav>
-    </header>
-    <h1>{pageTitle}</h1>
     <p>Hey there! Here are a few facts about me</p>
     <ol>
       <li>My name is {identity.firstName}.</li>
@@ -104,9 +85,4 @@ const textCase = "upperCase";
         <p>My goal is not 3 days.</p>
       )
     }
-    <Footer />
-		 <script>
-      import "../scripts/main.js";
-    </script>
-  </body>
-</html>
+</BaseLayout>

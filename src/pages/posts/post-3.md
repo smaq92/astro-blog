@@ -1,13 +1,11 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: 'My Third Blog Post'
 pubDate: 2025-05-31
 description: 'Astro and CSS'
 author: 'Sam A.'
 tags: ["astro", "styling", "css"]
 ---
-# My Third Blog Post
-
-Published on: 2025-05-31
 
 I finally went into styling the pages of Astro. It's still really similar with styling basic HTML and it's straight forward. I'm pretty sure I can incorporate SCSS here but to keep it simple, I'll stick to the good old fashioned import.
 
